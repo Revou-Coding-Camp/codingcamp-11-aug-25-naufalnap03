@@ -69,3 +69,11 @@ button:hover {
     padding: 1rem;
   }
 }
+.profile-card input {
+  display: block;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

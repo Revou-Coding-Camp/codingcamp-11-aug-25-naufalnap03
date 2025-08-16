@@ -17,3 +17,10 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
   alert("Message sent successfully!");
 });
+function updateProfile() {
+  const name = document.getElementById("profileName").value;
+  const role = document.getElementById("profileRole").value;
+  const location = document.getElementById("profileLocation").value;
+
+  alert(`Profile updated:\nName: ${name}\nRole: ${role}\nLocation: ${location}`);
+}
