@@ -1,26 +1,31 @@
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+// Welcome Message
+const welcomeMsg = document.getElementById("welcomeMsg");
+const nameInput = document.getElementById("name");
+if (welcomeMsg && nameInput) {
+  nameInput.addEventListener("input", () => {
+    welcomeMsg.textContent = `Hi, ${nameInput.value || "Guest"}`;
+  });
+}
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
+// Form Validation
+const form = document.getElementById("contactForm");
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const output = document.getElementById("formOutput");
 
-  if (!name || !email || !message) {
-    alert("Please fill in all fields.");
-    return;
-  }
-
-  if (!email.includes("@")) {
-    alert("Please enter a valid email.");
-    return;
-  }
-
-  alert("Message sent successfully!");
-});
-function updateProfile() {
-  const name = document.getElementById("profileName").value;
-  const role = document.getElementById("profileRole").value;
-  const location = document.getElementById("profileLocation").value;
-
-  alert(`Profile updated:\nName: ${name}\nRole: ${role}\nLocation: ${location}`);
+    if (!email.includes("@") || message.length < 5) {
+      output.innerHTML = `<p style="color:red;">Form tidak valid!</p>`;
+    } else {
+      output.innerHTML = `
+        <p><strong>Name:</strong> ${nameInput.value}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      `;
+      form.reset();
+      welcomeMsg.textContent = "Hi, Guest";
+    }
+  });
 }

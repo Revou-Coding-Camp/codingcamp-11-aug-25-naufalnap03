@@ -3,38 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SEFC Profile</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Home - SEFC</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Welcome, Naufal</h1>
-      <p>Your responsive profile page</p>
-    </header>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="profile.html">Our Profile</a>
+    </nav>
+  </header>
 
-    <section class="profile-card">
-      <img src="https://via.placeholder.com/150" alt="Profile Photo" />
-      <h2>Naufal</h2>
-      <p>Web Developer | Indonesia</p>
+  <main>
+    <section class="welcome">
+      <h1 id="welcomeMsg">Hi, Guest</h1>
     </section>
 
-    <form id="contactForm">
-      <h3>Contact Me</h3>
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <textarea id="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </div>
+    <section class="contact">
+      <h2>Message Us</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div id="formOutput"></div>
+    </section>
+  </main>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
-<section class="profile-card">
-  <img src="https://via.placeholder.com/150" alt="Profile Photo" />
-  <input type="text" id="profileName" value="Naufal" />
-  <input type="text" id="profileRole" value="Web Developer" />
-  <input type="text" id="profileLocation" value="Indonesia" />
-  <button onclick="updateProfile()">Update Profile</button>
-</section>
